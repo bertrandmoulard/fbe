@@ -35,6 +35,7 @@ group :doc do
 end
 
 group :test, :development do
+  gem 'pry'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
 end
