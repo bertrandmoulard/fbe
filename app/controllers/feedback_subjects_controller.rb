@@ -14,6 +14,7 @@ class FeedbackSubjectsController < ApplicationController
 
   def show
     @feedback_subject = FeedbackSubject.find(params[:id])
+    @qr = RQRCode::QRCode.new(feedback_subject_path(@feedback_subject))
   end
 
   def edit

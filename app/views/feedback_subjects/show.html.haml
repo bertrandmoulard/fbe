@@ -7,3 +7,12 @@
 = link_to 'Edit', edit_feedback_subject_path(@feedback_subject)
 \|
 = link_to 'Back', feedback_subjects_path
+
+%table
+  - @qr.modules.each_index do |x|
+    %tr
+      - @qr.modules.each_index do |y|
+        - if @qr.dark?(x,y)
+          %td.black
+        - else
+          %td.white
