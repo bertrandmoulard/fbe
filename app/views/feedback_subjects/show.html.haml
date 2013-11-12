@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @feedback_subject.name
+
+= link_to 'Edit', edit_feedback_subject_path(@feedback_subject)
+\|
+= link_to 'Back', feedback_subjects_path
