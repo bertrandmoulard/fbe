@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 1.2'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'haml-rails'
 
+gem 'simple_form'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -38,6 +40,11 @@ end
 group :test, :development do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'pry'
+end
+
+group :development do
+  gem 'better_errors'
 end
 
 # Use ActiveModel has_secure_password
