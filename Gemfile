@@ -1,3 +1,4 @@
+ruby '2.0.0'
 source 'https://rubygems.org'
 
 gem 'rails', '4.0.0'
@@ -16,6 +17,7 @@ gem 'groundworkcss'
 gem 'simple_form'
 gem 'rqrcode'
 gem 'thin'
+gem 'figaro'
 
 group :doc do
   gem 'sdoc', require: false

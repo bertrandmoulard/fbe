@@ -65,6 +65,9 @@ GEM
     factory_girl_rails (4.3.0)
       factory_girl (~> 4.3.0)
       railties (>= 3.0.0)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     fssm (0.2.10)
     groundworkcss (2.3.5)
       autoprefixer-rails
@@ -192,6 +195,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   compass-rails!
   factory_girl_rails
+  figaro
   groundworkcss
   haml-rails
   jbuilder (~> 1.2)
