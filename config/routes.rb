@@ -1,5 +1,9 @@
 Fbe::Application.routes.draw do
-  resources :feedback_subjects, path: "s"
+  resources :feedbacks
+
+  resources :feedback_subjects, path: "s" do
+    resources :feedback, path: "f"
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
