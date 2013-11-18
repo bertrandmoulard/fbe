@@ -12,12 +12,11 @@ gem 'jbuilder', '~> 1.2'
 gem 'therubyracer', :platforms => :ruby
 gem 'haml-rails'
 gem 'autoprefixer-rails'
-gem 'compass-rails', github: 'groundworkcss/compass-rails', ref: '1749c06f15dc4b058427e7969810457213647fb8'
-gem 'groundworkcss'
 gem 'simple_form'
 gem 'rqrcode'
 gem 'thin'
 gem 'figaro'
+gem 'neat'
 
 group :doc do
   gem 'sdoc', require: false
