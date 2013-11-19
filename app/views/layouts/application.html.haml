@@ -12,5 +12,6 @@
       <link type="text/css" rel="stylesheet" href="/assets/groundworkcss/groundwork-ie.css">
     = javascript_include_tag("application")
   %body
-    .row.padded.double
+    = render :partial => 'layouts/site_header'
+    .main-content
       = yield

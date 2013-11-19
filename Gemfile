@@ -16,7 +16,6 @@ gem 'simple_form'
 gem 'rqrcode'
 gem 'thin'
 gem 'figaro'
-gem 'neat'
 
 group :doc do
   gem 'sdoc', require: false
