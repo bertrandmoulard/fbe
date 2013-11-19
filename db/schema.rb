@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131113022601) do
+ActiveRecord::Schema.define(version: 20131119015102) do
 
   create_table "feedback_subjects", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "yes_no_question"
   end
 
   create_table "feedbacks", force: true do |t|

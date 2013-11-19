@@ -1,4 +1,4 @@
-%h1 Listing feedback_subjects
+%h1 Your existing products
 
 %table
   %tr
@@ -16,4 +16,5 @@
 
 %br
 
-= link_to 'New Feedback subject', new_feedback_subject_path
+= link_to new_feedback_subject_path do
+  %button.success Register a product

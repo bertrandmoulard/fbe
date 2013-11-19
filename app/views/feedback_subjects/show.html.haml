@@ -3,10 +3,11 @@
 %p
   %b Name:
   = @feedback_subject.name
+%p
+  %b The question you're asking your users:
+  = @feedback_subject.yes_no_question
 
-= link_to 'Edit', edit_feedback_subject_path(@feedback_subject)
-\|
-= link_to 'Back', feedback_subjects_path
+%h3 Your product's QR code
 
 %table.qr
   - @qr.modules.each_index do |x|
@@ -16,3 +17,7 @@
           %td.black
         - else
           %td.white
+
+= link_to 'Edit', edit_feedback_subject_path(@feedback_subject)
+\|
+= link_to 'Back', feedback_subjects_path

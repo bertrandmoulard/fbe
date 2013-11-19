@@ -2,6 +2,10 @@ class FeedbackSubjectsController < ApplicationController
 
   respond_to :html
 
+  def index
+    @feedback_subjects = FeedbackSubject.order(:name)
+  end
+
   def new
     @feedback_subject = FeedbackSubject.new
   end
@@ -9,7 +13,7 @@ class FeedbackSubjectsController < ApplicationController
   def create
     feedback_subject = FeedbackSubject.new(resource_params)
     feedback_subject.save!
-    redirect_to feedback_subject
+    redirect_to feedback_subjects_path
   end
 
   def show
@@ -24,11 +28,18 @@ class FeedbackSubjectsController < ApplicationController
   def update
     feedback_subject = FeedbackSubject.find(params[:id])
     feedback_subject.update_attributes!(resource_params)
-    redirect_to feedback_subject
+    flash[:message] = "Saved successfully"
+    redirect_to feedback_subjects_path
 
   end
+
+  # def destroy
+    # @feedback_subject = FeedbackSubject.find(params[:id]).destroy
+    # redirect_to feedback_subjects_path
+  # end
 
   def resource_params
-    params.require(:feedback_subject).permit(:name)
+    params.require(:feedback_subject).permit(:name, :yes_no_question)
   end
+
 end
