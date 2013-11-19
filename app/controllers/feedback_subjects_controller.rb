@@ -33,10 +33,10 @@ class FeedbackSubjectsController < ApplicationController
 
   end
 
-  # def destroy
-    # @feedback_subject = FeedbackSubject.find(params[:id]).destroy
-    # redirect_to feedback_subjects_path
-  # end
+  def destroy
+    @feedback_subject = FeedbackSubject.find(params[:id]).destroy
+    redirect_to feedback_subjects_path
+  end
 
   def resource_params
     params.require(:feedback_subject).permit(:name, :yes_no_question)
