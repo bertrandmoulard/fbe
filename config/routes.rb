@@ -1,8 +1,8 @@
 Fbe::Application.routes.draw do
-  resources :feedbacks
-
   resources :feedback_subjects, path: "s" do
-    resources :feedback, path: "f"
+    resources :feedbacks, path: "f" do
+      get :thank_you, on: :member
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'rqrcode'
 gem 'thin'
 gem 'figaro'
+gem 'jquery_mobile_rails'
 
 group :doc do
   gem 'sdoc', require: false

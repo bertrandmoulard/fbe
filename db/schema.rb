@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131119015102) do
+ActiveRecord::Schema.define(version: 20131120023811) do
 
   create_table "feedback_subjects", force: true do |t|
     t.string   "name"
@@ -21,8 +21,11 @@ ActiveRecord::Schema.define(version: 20131119015102) do
   end
 
   create_table "feedbacks", force: true do |t|
+    t.integer  "feedback_subject_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "yes"
+    t.string   "message"
   end
 
 end

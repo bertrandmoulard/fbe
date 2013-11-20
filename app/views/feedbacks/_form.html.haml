@@ -1,0 +1,9 @@
+= form_for [:feedback_subject, @feedback] do |f|
+  .field
+    %h2= @feedback.feedback_subject.yes_no_question
+    = f.label :yes, "If yes, check"
+    = f.select :yes, options: [true, false], data: { role: "slider" }
+    = f.label :message, "We would love to know more"
+    = f.text_field :message
+  .actions
+    = f.submit 'Save'
