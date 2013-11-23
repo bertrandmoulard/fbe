@@ -19,6 +19,7 @@ gem 'rqrcode'
 gem 'thin'
 gem 'figaro'
 gem 'jquery_mobile_rails'
+gem 'elementaljs-rails'
 
 group :doc do
   gem 'sdoc', require: false

@@ -1,16 +1,21 @@
 !!!
 %html
   %head
-    %title Fbe
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = csrf_meta_tags
-    %meta{content: "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
-    %meta{content: "width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1", name: "viewport"}/
+    %title Fbe Page
     = stylesheet_link_tag("mobile", :media => "screen")
-    /[if IE]
-      <link type="text/css" rel="stylesheet" href="/assets/groundworkcss/groundwork-ie.css">
+    = csrf_meta_tags
+    %meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
   %body
-    = render :partial => 'layouts/mobile_header'
-    .row.padded.double
-      = yield
+    %div{"data-role" => "page"}
+      %div{"data-role" => "header"}
+        = render :partial => 'layouts/mobile_header'
+      %div{"data-role" => "content"}
+        = yield
+
+    #thank-you{data: {role: "page"}}
+      %div{"data-role" => "header"}
+        = render :partial => 'layouts/mobile_header'
+      %div{"data-role" => "content"}
+        Thank You!
     = javascript_include_tag("mobile")
+

@@ -1,9 +1,8 @@
-= form_for [:feedback_subject, @feedback] do |f|
+= form_for [:feedback_subject, @feedback], html: { data: {behavior: "FBE.submitFeedback", ajax: false } } do |f|
   .field
     %h2= @feedback.feedback_subject.yes_no_question
-    = f.label :yes, "If yes, check"
-    = f.select :yes, options: [true, false], data: { role: "slider" }
-    = f.label :message, "We would love to know more"
-    = f.text_field :message
+    = f.select(:yes, [["yes", true], ["no", false]], {}, { data: { role: "slider" } })
+    = f.label :message, "Please drop us a line, we would love to hear from you"
+    = f.text_area :message
   .actions
     = f.submit 'Save'
