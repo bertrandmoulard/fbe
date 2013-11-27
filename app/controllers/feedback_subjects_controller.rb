@@ -18,7 +18,8 @@ class FeedbackSubjectsController < ApplicationController
 
   def show
     @feedback_subject = FeedbackSubject.find(params[:id])
-    @qr = RQRCode::QRCode.new(new_feedback_subject_feedback_url(@feedback_subject), size: 6)
+    # @qr = RQRCode::QRCode.new(new_feedback_subject_feedback_url(@feedback_subject), size: 6)
+    @qr = RQRCode::QRCode.new("http://goo.gl/15qtMY", size: 4)
   end
 
   def edit

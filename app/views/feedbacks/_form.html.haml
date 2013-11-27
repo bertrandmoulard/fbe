@@ -2,7 +2,7 @@
   .field
     %h2= @feedback.feedback_subject.yes_no_question
     = f.select(:yes, [["yes", true], ["no", false]], {}, { data: { role: "slider" } })
-    = f.label :message, "Please drop us a line, we would love to hear from you"
+    = f.label :message, "Please drop us a line, we would love to hear from you!"
     = f.text_area :message
   .actions
     = f.submit 'Save'
