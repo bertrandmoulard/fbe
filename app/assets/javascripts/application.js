@@ -15,3 +15,9 @@
 //= require groundworkcss/libs/modernizr-2.6.2.min
 //= require groundworkcss/all
 //= require turbolinks
+//= require elemental
+//= require Chart.min
+//= require pie_chart
+$(document).ready(function() {
+  Elemental.load(document);
+});

@@ -4,31 +4,38 @@
   %h1
     = @feedback_subject.name
   %p
+    %b Question:
     = @feedback_subject.yes_no_question
 
-  %table.qr
-    - @qr.modules.each_index do |x|
-      %tr
-        - @qr.modules.each_index do |y|
-          - if @qr.dark?(x,y)
-            %td.black
-          - else
-            %td.white
+  .one.half.align-center
+    - yes = @feedback_subject.feedbacks.where(yes: true).count
+    - no = @feedback_subject.feedbacks.where(yes: false).count
+    %canvas#pie-chart{width: 200, height: 200, data: {behavior: "pieChart", yes: yes, no: no}}
+  .one.half
+    %table.qr
+      - @qr.modules.each_index do |x|
+        %tr
+          - @qr.modules.each_index do |y|
+            - if @qr.dark?(x,y)
+              %td.black
+            - else
+              %td.white
 
-  %h2
-    Feedback so far
-  %table
-    %thead
-      %th
-        answer
-      %th
-        message
-    - @feedback_subject.feedbacks.each do | feedback |
-      %tr
-        %td
-          = feedback.yes ? "yes" : "no"
-        %td
-          = feedback.message
+  .row
+    %h2
+      More detail
+    %table
+      %thead
+        %th
+          answer
+        %th
+          message
+      - @feedback_subject.feedbacks.each do | feedback |
+        %tr
+          %td
+            = feedback.yes ? "yes" : "no"
+          %td
+            = feedback.message
 
 = link_to 'Edit', edit_feedback_subject_path(@feedback_subject)
 \|
